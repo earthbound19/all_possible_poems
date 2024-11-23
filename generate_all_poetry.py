@@ -16,6 +16,9 @@
 
 
 # CODE
+# TO DO
+# Throw error on cipher load fail.
+
 import os
 db_file_exists_boolean = os.path.exists('all_poetry.sqlite')
 if db_file_exists_boolean == False:
@@ -80,7 +83,7 @@ if db_file_exists_boolean == False:
 	conn.commit()
 	conn.close()
 
-	print("DONE. All possible poemes (in the constraints of this script) have been created: ", str(len(all_poetry)), ' poems.')
+	print("DONE. All possible poems (in the constraints of this script) have been created: ", str(len(all_poetry)), ' poems.')
 	print("To extract and translate poems by ID (which is any number from 1 to that maximum range), use retrieve_and_print_poem.py.")
 else:
 	print('Database file all_poetry.sqlite already exists; will not use.\nTo recreate it, delete it and run this script again.')
